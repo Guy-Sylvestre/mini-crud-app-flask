@@ -1,0 +1,5 @@
+Flask
+SQLAlchemy
+pylint
+flask_sqlalchemy
+gunicorn

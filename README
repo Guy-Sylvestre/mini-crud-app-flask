@@ -1,0 +1,43 @@
+1- First setup
+
+mkdir FLASKAPP
+cd FLASKAPP
+python3 -m venv env
+source ./env/bin/active
+touch requirement.txt
+nano requirement.txt 
+write all dependence neccessary for development
+pip install -r requirement.txt
+
+2- Second setup
+generate template for flask app
+create *template folder in racing project
+cd template
+create all vue for render template
+create a view *base.html fix for all views
+create folder partials
+cd partials
+touch _navbar.html
+
+3- Third setup (deployment on heroku)
+login heroku
+heroku create pcoder-flask-mini-crud
+git push heroku master
+link web site: https://pcoder-flask-mini-crud.herokuapp.com/
+repository heroku: https://git.heroku.com/pcoder-flask-mini-crud.git
+
+----------Launcher project flask app
+flask --app <name_app> --debug run
+
+
+------------    gitlab      ------------
+cd existing_repo
+git remote add origin https://gitlab.com/Guy-Sylvestre/flask-mini-crud.git
+git branch -M main
+
+
+
+----------      heroku      --------------
+git remote add origin https://git.heroku.com/pcoder-flask-mini-crud.git
+git branch -M master
+git push -uf origin main

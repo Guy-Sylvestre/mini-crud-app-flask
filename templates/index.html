@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <h2 class="text-center mt-5">Apprendre flask</h2>
+
+    <div>
+        {% if tasks %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tache</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+    
+                    {% for task in tasks %}
+                    
+                        <tr>
+                            <th>{{ task.name }}</th>
+                            <th>{{ task.created_at.date() }}</th>
+                            <th>
+                                <a href="/delete/{{task.id}}/" class="btn btn-danger">Supprimer</a>
+                                <a href="/update/{{task.id}}/" class="btn btn-primary">modifier</a>
+                            </th>
+                        </tr>
+    
+                    {% endfor %}
+    
+                </tbody>
+            </table>
+    
+        {% else %}
+    
+            <p>Pas de choses a faire ...</p>
+    
+        {% endif %}
+    
+        {% include "partials/_form.html" %}
+
+    </div>
+
+{% endblock content %}
